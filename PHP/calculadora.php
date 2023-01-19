@@ -7,6 +7,12 @@
     $a = 1;
     $b = -8;
     $c = 12;
+    $pasc1 = 1; 
+    $pasc2 = 0; 
+    $gas = 10; //litros
+    $km = 5; //kilometros
+    $bin = 101011; //Binario
+    $hexa = "45F3D"; //Hexadecimal
     
     //Operações
     function soma($num1, $num2){
@@ -39,6 +45,17 @@
         }
         return $msg;
     }
+
+    function pascal($pasc1){
+        $msg = "";
+        for($x = 0; $x < 5; $x++){  // pensa x como um contador nossa linha
+            for($y = 0; $y < 5; $y++){ // pensa y como um contador colunas
+                $msg .= "$pasc1 , $x <br>"; //aqui vc vai preencher esse loop com a formula "Sn=2n, em que n é o número da linha."                         
+            }
+        }
+        return $msg;
+    }
+
 
     function raiz($num1){
         if($num1 <0){
@@ -83,12 +100,52 @@
         }
     }
 
+    function exerciUm($gas, $km){
+        //calcular o consumo médio de gasolina de um autómovel
+        //fornecendo a distancia total percorrida e total de gasolia gasto
+        $media = $km/$gas;
+        return $media;
+
+    }
+
+    function exerciDois(){
+        //Realizar a sequencia de Fibonacci ate 1000
+    }
+
+    /*
+    exercicio 3: Criar um conversor de binários para decimal, e inverter
+    cada valor binaria deve ser multiplacdo por 2 elevado de ero ate 7
+
+
+
+    exercicio 4: Conversor de decimal para hexadecimal e inverter
+    exercicio 5: Conversor de hexadecimal para binarias e inverter
+    exercicio 6: Nome do vendedor em tela + salario fixo + total de vendas + 15% de comissão
+                 informar o total
+    exercicio 7: Mostrar o nome do aluno em tela, e calcular a média de notas das 3 provas
+    */
+
+    function binEde(){
+        $den = 1*2**5 + 0*2**4 + 1*2**3 + 0*2**2 + 1*2**1 + 1*2**0;
+        return $den;
+    }
+
+    function exerciCin(){
+        $conver = 4*16**4 + 5*16**3 + 15*16**2 + 3*16**1 + 16*16**0;
+        return $conver;
+    }
+
+ 
     //para escrever na tela em PHP usamos o elemeto echo
     echo "<br>A soma de $num1 e $num2 é:".soma($num1, $num2);
     echo "<br>A subtração de $num1 e $num2 é:".subtrair($num1, $num2);
     echo "<br>A divisão de $num1 e $num2 é:".divi($num1, $num2);
     echo "<br>A multiplicação de $num1 e $num2 é:".multi($num1, $num2);
     echo "<br>$num1 elevado a $num2 é:".potencia($num1, $num2);
-    echo "<br>A raiz de $num1 é:".raiz($num1);
-    echo tabuada($num2);
+    echo "<br>A raiz de $num1 é:".raiz($num1) ."<br>";
+    echo "Percorrimos ".$km." km, e usamos ".$gas." litros. Em média foi um gasto de:".exerciUm($gas, $km);
+    //echo pascal($pasc1);
+    echo tabuada($num2)."<br>";
+    echo "O valor binario é:".$bin." Convertido para decimal é:".binEde()."<br>";
+    echo "hexadecimal:".$hexa." Convertido para decimal é:".exerciCin();
 ?>
