@@ -13,6 +13,14 @@
     $km = 5; //kilometros
     $bin = 101011; //Binario
     $hexa = "45F3D"; //Hexadecimal
+    $salesman = "Yuri";
+    $sal = 1500;
+    $vendas = 2000;
+    $aluno = "Vitor";
+    $nota1 = 8.8;
+    $nota2 = 7.1;
+    $nota3 = 7.5;
+    $cel = 31;
     
     //Operações
     function soma($num1, $num2){
@@ -127,12 +135,53 @@
 
     function binEde(){
         $den = 1*2**5 + 0*2**4 + 1*2**3 + 0*2**2 + 1*2**1 + 1*2**0;
+        $bin = 101011; //Binario
+        strlen($bin);
+        for($i = 0; $i<=strlen($bin); $i++){
+            if($bin == 1){
+                $i*2**$i;
+            }
+        }
         return $den;
     }
 
     function exerciCin(){
         $conver = 4*16**4 + 5*16**3 + 15*16**2 + 3*16**1 + 16*16**0;
         return $conver;
+    }
+
+    function exerciMeia(){
+        $vendas = 2000;
+        $sal = 1500;
+        $total = ($vendas * 15) / 100;
+        return $total + $vendas + $sal;
+    }
+
+    function exerciSete(){
+        $aluno = "Vitor";
+        $nota1 = 8.8;
+        $nota2 = 7.1;
+        $nota3 = 7.5;
+        $media = ($nota1 + $nota2 + $nota3) / 3;
+        
+        return $media;
+    }
+
+    function exerciOito(){
+        $cel = 31;
+        $far = (9*$cel+160)/5;
+        return $far;
+    }
+
+    function exerciNove(){
+        $aniver = "05/11/1994"
+        
+        if($mes ==2){
+            $mes * 28;
+        }else{
+            $mes = $mes * 30;
+        }
+        $ano = $ano *365;
     }
 
  
@@ -148,4 +197,7 @@
     echo tabuada($num2)."<br>";
     echo "O valor binario é:".$bin." Convertido para decimal é:".binEde()."<br>";
     echo "hexadecimal:".$hexa." Convertido para decimal é:".exerciCin();
+    echo "Bem-vindo: ".$salesman."<br> Seu salário fixo é de: ".$sal."R$"."<br>O total de vendas desse mês foi de: ".$vendas."R$"."<br>Junto com a comissão fico um total de: ".exerciMeia()."R$";
+    echo "<br>Oi ".$aluno." Bem-vindo ao Senac"."<br>Primeira nota: ".$nota1."<br>Segunda nota: ".$nota2."<br>Terceira nota:".$nota3."<br>A Média é de: ".exerciSete()."<br>";
+    echo "Temperatura em Celsius é de: ".$cel."°C "."<br>Convertendo para Fahrenheit é:".exerciOito()."°F";
 ?>
