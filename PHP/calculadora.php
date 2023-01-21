@@ -11,7 +11,7 @@
     $pasc2 = 0; 
     $gas = 10; //litros
     $km = 5; //kilometros
-    $bin = 101011; //Binario
+    $bin = "101011"; //Binario
     $hexa = "45F3D"; //Hexadecimal
     $salesman = "Yuri";
     $sal = 1500;
@@ -121,43 +121,46 @@
 
     function exerciDois(){
         //Realizar a sequencia de Fibonacci ate 1000
+        //preciamos de variaver para anterio e prox
+        for($i = 0; $i <=1000; $i++){
+            
+            
+        }
     }
 
-    /*
-    exercicio 3: Criar um conversor de binários para decimal, e inverter
-    cada valor binaria deve ser multiplacdo por 2 elevado de ero ate 7
+    function exerciTres(){
+        /*
+        exercicio 3: Criar um conversor de binários para decimal, e inverter
+        cada valor binaria deve ser multiplacdo por 2 elevado de ero ate 7
+        */
+        //$den = 1*2**5 + 0*2**4 + 1*2**3 + 0*2**2 + 1*2**1 + 1*2**0;
+        $den = 0;
+        $bin = "10101011"; //Binario
+        $cont = strlen($bin) - 1; //contador do tamanho da string -1
+        for($i = 0; $i < strlen($bin); $i++){ //
+            $carac = substr($bin, $i,1);
 
-
-
-    exercicio 4: Conversor de decimal para hexadecimal e inverter
-    exercicio 5: Conversor de hexadecimal para binarias e inverter
-    exercicio 6: Nome do vendedor em tela + salario fixo + total de vendas + 15% de comissão
-                 informar o total
-    exercicio 7: Mostrar o nome do aluno em tela, e calcular a média de notas das 3 provas
-    */
-
-    function binEde(){
-        $den = 1*2**5 + 0*2**4 + 1*2**3 + 0*2**2 + 1*2**1 + 1*2**0;
-        $bin = 101011; //Binario
-        strlen($bin);
-        for($i = 0; $i<=strlen($bin); $i++){
-            if($bin == 1){
-                $i*2**$i;
+            if($carac == 1){
+                $den += pow(2,$cont);
             }
+            $cont--;
         }
         return $den;
     }
 
     function exerciQua(){
-
+        //exercicio 4: Conversor de decimal para hexadecimal e inverter
     }
 
     function exerciCin(){
+        //exercicio 5: Conversor de hexadecimal para binarias e inverter
         $conver = 4*16**4 + 5*16**3 + 15*16**2 + 3*16**1 + 16*16**0;
         return $conver;
     }
 
     function exerciMeia(){
+        //exercicio 6: Nome do vendedor em tela + salario fixo + total de vendas + 15% de comissão
+        //informar o total
         $vendas = 2000;
         $sal = 1500;
         $total = ($vendas * 15) / 100;
@@ -165,6 +168,7 @@
     }
 
     function exerciSete(){
+        //exercicio 7: Mostrar o nome do aluno em tela, e calcular a média de notas das 3 provas
         $aluno = "Vitor";
         $nota1 = 8.8;
         $nota2 = 7.1;
@@ -240,8 +244,17 @@
     }
 
     function exerciDose(){
-        $valor = 
-        $base = $valor + $frete + $seguro + $outras
+        $valPeca1 = 45;
+        $valPeca2 = 75;
+        $quanPeca1 = 5;
+        $quanPeca2 = 3;
+        $aliquo = 24;
+        $codPeca1 = 1;
+        $codPeca2 = 2;
+        $ipi = ($valPeca1 * $quanPeca1 + $valPeca2 * $quanPeca2)*($aliquo/100+1);
+        $msg = "o valor da peça 1: $valPeca1 R$, valor da peça 2: $valPeca2 R$ <br> IPI: $ipi";
+        return $msg;
+        
     }
 
     function exerciTreze(){
@@ -274,11 +287,12 @@
     echo "Percorrimos ".$km." km, e usamos ".$gas." litros. Em média foi um gasto de:".exerciUm($gas, $km);
     //echo pascal($pasc1);
     echo tabuada($num2)."<br>";
-    echo "O valor binario é: $bin  Convertido para decimal é:".binEde()."<br>";
-    echo "hexadecimal: $hexa Convertido para decimal é:".exerciCin();
+    echo "O valor binario é: $bin  Convertido para decimal é:".exerciTres()."<br>";
+    echo "hexadecimal: $hexa Convertido para decimal é:".exerciCin()."<br>";
     echo "Bem-vindo:  $salesman <br> Seu salário fixo é de:  $sal R$  <br>O total de vendas desse mês foi de:  $vendas R$  <br>Junto com a comissão fico um total de: ".exerciMeia()."R$";
     echo "<br>Oi ".$aluno." Bem-vindo ao Senac"."<br>Primeira nota: ".$nota1."<br>Segunda nota: ".$nota2."<br>Terceira nota:".$nota3."<br>A Média é de: ".exerciSete()."<br>";
     echo "Temperatura em Celsius é de: ".$cel."°C "."<br>Convertendo para Fahrenheit é:".exerciOito()."°F <br>";
     echo exerciOnze()."<br>";
+    echo exerciDose()."<br>";
     echo "Valores inicias de A:$A, B:$B e C:$C <br> calculamos a expressão: D = R + S /2<br>Onde R = (A + B)**2 e S = (B + C)**2<br>Reasultado: ".exerciTreze()."<br>";
     echo "Peso ideal".exerciCator();
